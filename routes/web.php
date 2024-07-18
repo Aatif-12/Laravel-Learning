@@ -12,4 +12,6 @@ Route::view('userForm', 'userForm');
 Route::post('/addUser', [UserController::class, 'addUser']);
 // Route::post('/addNew', [NewController::class, 'addNew']);
 
-Route::view('about', 'about');
+Route::view('about', 'about')->middleware('check1');
+
+Route::get('users', [UserController::class, 'users']);
