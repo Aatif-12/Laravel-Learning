@@ -3,23 +3,28 @@
     <form action="addUser" method="post">
         @csrf
        <div class="input-wrapper">
-        <input type="text" name="username" placeholder="Enter Name">
+        <input type="text" name="username" placeholder="Enter Name" class="{{$errors->first('email')?'input-error':''}}">
+        <span style="color: red">@error('username'){{$message}}@enderror</span>
         </div>
         <div class="input-wrapper">
-            <input type="email" name="email" placeholder="Enter Email">
+            <input type="email" name="email" placeholder="Enter Email"
+            >
+            <span style="color: red">@error('email'){{$message}}@enderror</span>
         </div>
 
         <div class="input-wrapper">
             <input type="text" name="country" placeholder="Enter Country">
+            <span style="color: red">@error('country'){{$message}}@enderror</span>
         </div>
 
         <div class="input-wrapper">
             <button type="Add New User">Add User</button>
         </div>
+    </form>
 </div>
 
 
-<div>
+{{-- <div>
     <h1>New User</h1>
     <form action="addNew" method="post" >
         @csrf
@@ -58,7 +63,7 @@
         </div>
         <button type="submit">Submit</button>
     </form>
-</div>
+</div> --}}
 
 
 <style>
@@ -78,5 +83,9 @@
     }
     .input-wrapper{
         margin: 10px 0;
+    }
+    .input-error{
+        border: 1px solid red;
+        color: red;
     }
 </style>

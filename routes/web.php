@@ -10,4 +10,4 @@ Route::get('/', function () {
 
 Route::view('userForm', 'userForm');
 Route::post('/addUser', [UserController::class, 'addUser']);
-Route::post('/addNew', [NewController::class, 'addNew']);
+// Route::post('/addNew', [NewController::class, 'addNew']);
